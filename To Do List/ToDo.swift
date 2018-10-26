@@ -11,19 +11,25 @@ import Foundation
 struct ToDo {
     var title: String
     var isComplete: Bool
-    var duedate: Date
-    var notes: String
+    var dueDate: Date
+    var notes: String?
     
     static func loadToDos() -> [ToDo]? {
         return nil
     }
     static func loadSampleToDos() -> [ToDo] {
         return [
-            ToDo(title: "Дело 1", isComplete: false, duedate: Date(), notes: "Заметка 1"),
-            ToDo(title: "Дело 2", isComplete: false, duedate: Date(), notes: " Pfvtnrf 2"),
-            ToDo(title: "dd", isComplete: false, duedate: Date(), notes: "dd2"),
-            ToDo(title: "dddd", isComplete: false, duedate: Date(), notes: "dhdhffy"),
+            ToDo(title: "Дело 1", isComplete: false, dueDate: Date(), notes: "Заметка 1"),
+            ToDo(title: "Дело 2", isComplete: false, dueDate: Date(), notes: " Pfvtnrf 2"),
+            ToDo(title: "dd", isComplete: false, dueDate: Date(), notes: "dd2"),
+            ToDo(title: "dddd", isComplete: false, dueDate: Date(), notes: "dhdhffy"),
         
         ]
     }
+    static let dueDateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .short
+        return formatter
+    }()
 }
