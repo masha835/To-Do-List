@@ -10,7 +10,13 @@ import UIKit
 
 class ToDoTableViewController: UITableViewController {
     
-    var todos = [ToDo]()
+    var todos = [ToDo]() {
+        didSet {
+            try! ToDo.realm.write {
+                ToDo.realm.add(todos)
+            }
+        }
+    }
     
 
     override func viewDidLoad() {
@@ -61,6 +67,9 @@ class ToDoTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            try! ToDo.realm.write {
+                ToDo.realm.delete(todos[indexPath.row])
+            }
             todos.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {

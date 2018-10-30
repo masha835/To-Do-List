@@ -7,15 +7,46 @@
 //
 
 import Foundation
+import Realm
+import RealmSwift
 
-struct ToDo {
-    var title: String
-    var isComplete: Bool
-    var dueDate: Date
-    var notes: String?
+class ToDo: Object {
+    @objc dynamic var title: String = ""
+    @objc dynamic var isComplete: Bool = false
+    @objc dynamic var dueDate: Date = Date()
+    @objc dynamic var notes: String? = nil
+    
+    static let realm = try! Realm()
+    
+    
+    init(title: String, isComplete: Bool, dueDate: Date, notes: String?) {
+        self.title = title
+        self.isComplete = isComplete
+        self.dueDate = dueDate
+        self.notes = notes
+        super.init()
+    }
+    
+    
+    required init() {
+        super.init()
+    }
+    
+    required init(realm: RLMRealm, schema: RLMObjectSchema) {
+        super.init(realm: realm, schema: schema)
+    }
+    
+    required init(value: Any, schema: RLMSchema) {
+        super.init(value: value, schema: schema)
+    }
+    
     
     static func loadToDos() -> [ToDo]? {
-        return nil
+        var todos = [ToDo]()
+        let todoObject = realm.objects(ToDo.self)
+        print(#function, todoObject.count)
+        todoObject.forEach{ todos.append($0)}
+        return todos
     }
     static func loadSampleToDos() -> [ToDo] {
         return [

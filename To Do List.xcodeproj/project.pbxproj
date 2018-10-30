@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F4277E52188435B0067954D /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4277E3218843590067954D /* Realm.framework */; };
+		3F4277E62188435B0067954D /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4277E3218843590067954D /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3F4277E72188435B0067954D /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4277E42188435B0067954D /* RealmSwift.framework */; };
+		3F4277E82188435B0067954D /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4277E42188435B0067954D /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3F42C572217F0BF60007B5A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F42C571217F0BF60007B5A1 /* AppDelegate.swift */; };
 		3F42C577217F0BF60007B5A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F42C575217F0BF60007B5A1 /* Main.storyboard */; };
 		3F42C579217F0BFA0007B5A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F42C578217F0BFA0007B5A1 /* Assets.xcassets */; };
@@ -16,7 +20,25 @@
 		3F42C58821830DF30007B5A1 /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F42C58721830DF30007B5A1 /* ToDoViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		3F4277E92188435B0067954D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3F4277E82188435B0067954D /* RealmSwift.framework in Embed Frameworks */,
+				3F4277E62188435B0067954D /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		3F1E10BD2183458B00CA1912 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		3F4277E3218843590067954D /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		3F4277E42188435B0067954D /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		3F42C56E217F0BF50007B5A1 /* To Do List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "To Do List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F42C571217F0BF60007B5A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F42C576217F0BF60007B5A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -33,6 +55,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F4277E72188435B0067954D /* RealmSwift.framework in Frameworks */,
+				3F4277E52188435B0067954D /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +66,9 @@
 		3F42C565217F0BF50007B5A1 = {
 			isa = PBXGroup;
 			children = (
+				3F4277E3218843590067954D /* Realm.framework */,
+				3F4277E42188435B0067954D /* RealmSwift.framework */,
+				3F1E10BD2183458B00CA1912 /* File.swift */,
 				3F42C570217F0BF60007B5A1 /* To Do List */,
 				3F42C56F217F0BF50007B5A1 /* Products */,
 			);
@@ -80,6 +107,7 @@
 				3F42C56A217F0BF50007B5A1 /* Sources */,
 				3F42C56B217F0BF50007B5A1 /* Frameworks */,
 				3F42C56C217F0BF50007B5A1 /* Resources */,
+				3F4277E92188435B0067954D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -292,6 +320,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M326LH9Q2Q;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "To Do List/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -310,6 +342,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M326LH9Q2Q;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "To Do List/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
